@@ -1,0 +1,181 @@
+!!folder
+name: root
+children:
+- !!folder
+  name: World
+  children:
+  - !!folder
+    name: Generation
+    children:
+    - !!folder
+      name: Ecosystem
+      children:
+      - !!element {type: ECOSYSTEM, id: 0}
+    - !!folder
+      name: Map Provider
+      children:
+      - !!element {type: MAP_PROVIDER, id: 0}
+  - !!folder
+    name: Structures
+    children:
+    - !!folder
+      name: Natural
+      children: []
+    - !!folder
+      name: Player
+      children: []
+  - !!folder
+    name: Tiles
+    children:
+    - !!element {type: TILE, id: 2}
+    - !!folder
+      name: normal tiles
+      children:
+      - !!element {type: TILE, id: 0}
+      - !!element {type: TILE, id: 1}
+      - !!element {type: TILE, id: 3}
+      - !!element {type: TILE, id: 4}
+      - !!element {type: TILE, id: 5}
+      - !!element {type: TILE, id: 6}
+      - !!element {type: TILE, id: 7}
+    - !!folder
+      name: highlands tiles
+      children:
+      - !!element {type: TILE, id: 8}
+      - !!element {type: TILE, id: 9}
+      - !!element {type: TILE, id: 10}
+      - !!element {type: TILE, id: 11}
+      - !!element {type: TILE, id: 12}
+- !!folder
+  name: Gamemodes
+  children:
+  - !!folder
+    name: PvE
+    children: []
+  - !!folder
+    name: PvP
+    children: []
+  - !!folder
+    name: Survival
+    children: []
+  - !!folder
+    name: Testing
+    children:
+    - !!element {type: GAME_MODE, id: 0}
+- !!folder
+  name: Creatures
+  children:
+  - !!folder
+    name: Behaviors
+    children: []
+  - !!folder
+    name: Abilities
+    children: []
+  - !!folder
+    name: Hostile
+    children: []
+  - !!folder
+    name: Passive
+    children: []
+  - !!folder
+    name: Neutral
+    children: []
+- !!folder
+  name: Items
+  children:
+  - !!folder
+    name: Weapons
+    children: []
+  - !!folder
+    name: Accessories
+    children: []
+  - !!folder
+    name: Armors
+    children: []
+  - !!folder
+    name: Resources
+    children: []
+  - !!folder
+    name: Structures
+    children: []
+  - !!folder
+    name: Consumable
+    children: []
+  - !!folder
+    name: Ammo
+    children: []
+  - !!folder
+    name: Testing
+    children:
+    - !!element {type: ITEM, id: 0}
+- !!folder
+  name: Effects
+  children:
+  - !!folder
+    name: Creatures
+    children: []
+  - !!folder
+    name: Items
+    children: []
+- !!folder
+  name: Sprites
+  children:
+  - !!folder
+    name: Animations
+    children:
+    - !!folder
+      name: Generic
+      children:
+      - !!element {type: ANIMATION_TEMPLATE, id: 0}
+      - !!element {type: ANIMATION_TEMPLATE, id: 3}
+      - !!element {type: ANIMATION_TEMPLATE, id: 5}
+      - !!element {type: ANIMATION_TEMPLATE, id: 6}
+    - !!folder
+      name: Character
+      children:
+      - !!element {type: ANIMATION_TEMPLATE, id: 1}
+      - !!element {type: EQUIPMENT_OFFSET, id: 0}
+    - !!folder
+      name: Equipment
+      children: []
+    - !!folder
+      name: Creatures
+      children: []
+    - !!folder
+      name: Structures
+      children:
+      - !!element {type: ANIMATION_TEMPLATE, id: 2}
+      - !!element {type: ANIMATION_TEMPLATE, id: 4}
+    - !!folder
+      name: Effects
+      children: []
+  - !!folder
+    name: Images
+    children:
+    - !!folder
+      name: Generic
+      children:
+      - !!element {type: SPRITE_SHEET, id: 0}
+    - !!folder
+      name: Character
+      children:
+      - !!folder
+        name: Armor
+        children: []
+      - !!element {type: SPRITE_SHEET, id: 1}
+    - !!folder
+      name: Tiles
+      children:
+      - !!element {type: SPRITE_SHEET, id: 2}
+    - !!folder
+      name: Items
+      children: []
+    - !!folder
+      name: Creatures
+      children: []
+    - !!folder
+      name: Structures
+      children: []
+    - !!folder
+      name: Effects
+      children: []

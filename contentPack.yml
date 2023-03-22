@@ -1,0 +1,731 @@
+!!ContentPack
+identifier:
+  name: Seraph's Dominion Alpha
+  version: {major: 1, minor: 0}
+  author: Seraph
+animationTemplates:
+- &single_image
+  id: 0
+  name: single_image
+  animations:
+    MOVE_RIGHT:
+      frameDuration: 1000
+      action: MOVE_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_UP:
+      frameDuration: 1000
+      action: MOVE_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_LEFT:
+      frameDuration: 1000
+      action: MOVE_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_DOWN:
+      frameDuration: 1000
+      action: MOVE_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_RIGHT:
+      frameDuration: 1000
+      action: STAND_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_UP:
+      frameDuration: 1000
+      action: STAND_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_LEFT:
+      frameDuration: 1000
+      action: STAND_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_DOWN:
+      frameDuration: 1000
+      action: STAND_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_RIGHT:
+      frameDuration: 1000
+      action: WORK_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_UP:
+      frameDuration: 1000
+      action: WORK_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_DOWN:
+      frameDuration: 1000
+      action: WORK_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_LEFT:
+      frameDuration: 1000
+      action: WORK_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    BEFORE_DEFAULT:
+      frameDuration: 1000
+      action: BEFORE_DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+- &character
+  id: 1
+  name: character
+  animations:
+    MOVE_RIGHT:
+      frameDuration: 200
+      action: MOVE_RIGHT
+      frames:
+      - {x: 1, y: 3}
+      - {x: 0, y: 3}
+      - {x: 2, y: 3}
+      - {x: 0, y: 3}
+      rotationPerSecond: 0.0
+    MOVE_UP:
+      frameDuration: 200
+      action: MOVE_UP
+      frames:
+      - {x: 1, y: 1}
+      - {x: 0, y: 1}
+      - {x: 2, y: 1}
+      - {x: 0, y: 1}
+      rotationPerSecond: 0.0
+    MOVE_LEFT:
+      frameDuration: 200
+      action: MOVE_LEFT
+      frames:
+      - {x: 1, y: 2}
+      - {x: 0, y: 2}
+      - {x: 2, y: 2}
+      - {x: 0, y: 2}
+      rotationPerSecond: 0.0
+    MOVE_DOWN:
+      frameDuration: 200
+      action: MOVE_DOWN
+      frames:
+      - {x: 1, y: 0}
+      - {x: 0, y: 0}
+      - {x: 2, y: 0}
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_RIGHT:
+      frameDuration: 200
+      action: STAND_RIGHT
+      frames:
+      - {x: 0, y: 3}
+      rotationPerSecond: 0.0
+    STAND_UP:
+      frameDuration: 200
+      action: STAND_UP
+      frames:
+      - {x: 0, y: 1}
+      rotationPerSecond: 0.0
+    STAND_LEFT:
+      frameDuration: 200
+      action: STAND_LEFT
+      frames:
+      - {x: 0, y: 2}
+      rotationPerSecond: 0.0
+    STAND_DOWN:
+      frameDuration: 200
+      action: STAND_DOWN
+      frames:
+      - &id {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_RIGHT:
+      frameDuration: 200
+      action: WORK_RIGHT
+      frames:
+      - *id
+      - {x: 1, y: 3}
+      rotationPerSecond: 0.0
+    WORK_UP:
+      frameDuration: 200
+      action: WORK_UP
+      frames:
+      - {x: 0, y: 1}
+      - {x: 1, y: 1}
+      rotationPerSecond: 0.0
+    WORK_DOWN:
+      frameDuration: 200
+      action: WORK_DOWN
+      frames:
+      - {x: 0, y: 0}
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    WORK_LEFT:
+      frameDuration: 200
+      action: WORK_LEFT
+      frames:
+      - {x: 0, y: 2}
+      - {x: 1, y: 2}
+      rotationPerSecond: 0.0
+    DEFAULT:
+      frameDuration: 200
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+- id: 2
+  name: harvest
+  animations:
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    HARVESTED:
+      frameDuration: 1000
+      action: HARVESTED
+      frames:
+      - {x: 0, y: 1}
+      rotationPerSecond: 0.0
+- id: 3
+  name: bidirectional_single_image
+  animations:
+    MOVE_RIGHT:
+      frameDuration: 1000
+      action: MOVE_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_UP:
+      frameDuration: 1000
+      action: MOVE_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_LEFT:
+      frameDuration: 1000
+      action: MOVE_LEFT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_DOWN:
+      frameDuration: 1000
+      action: MOVE_DOWN
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    STAND_RIGHT:
+      frameDuration: 1000
+      action: STAND_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_UP:
+      frameDuration: 1000
+      action: STAND_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_LEFT:
+      frameDuration: 1000
+      action: STAND_LEFT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    STAND_DOWN:
+      frameDuration: 1000
+      action: STAND_DOWN
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    WORK_RIGHT:
+      frameDuration: 1000
+      action: WORK_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_UP:
+      frameDuration: 1000
+      action: WORK_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_DOWN:
+      frameDuration: 1000
+      action: WORK_DOWN
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    WORK_LEFT:
+      frameDuration: 1000
+      action: WORK_LEFT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+- id: 4
+  name: static_object_animated
+  animations:
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+- id: 5
+  name: rotating_single_image_5
+  animations:
+    MOVE_RIGHT:
+      frameDuration: 1000
+      action: MOVE_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    MOVE_UP:
+      frameDuration: 1000
+      action: MOVE_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    MOVE_LEFT:
+      frameDuration: 1000
+      action: MOVE_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    MOVE_DOWN:
+      frameDuration: 1000
+      action: MOVE_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    STAND_RIGHT:
+      frameDuration: 1000
+      action: STAND_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    STAND_UP:
+      frameDuration: 1000
+      action: STAND_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    STAND_LEFT:
+      frameDuration: 1000
+      action: STAND_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    STAND_DOWN:
+      frameDuration: 1000
+      action: STAND_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    WORK_RIGHT:
+      frameDuration: 1000
+      action: WORK_RIGHT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    WORK_UP:
+      frameDuration: 1000
+      action: WORK_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    WORK_DOWN:
+      frameDuration: 1000
+      action: WORK_DOWN
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    WORK_LEFT:
+      frameDuration: 1000
+      action: WORK_LEFT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 5.0
+- id: 6
+  name: quadirectional_single_image
+  animations:
+    MOVE_RIGHT:
+      frameDuration: 1000
+      action: MOVE_RIGHT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    MOVE_UP:
+      frameDuration: 1000
+      action: MOVE_UP
+      frames:
+      - &id02 {x: 0, y: 1}
+      rotationPerSecond: 0.0
+    MOVE_LEFT:
+      frameDuration: 1000
+      action: MOVE_LEFT
+      frames:
+      - {x: 1, y: 1}
+      rotationPerSecond: 0.0
+    MOVE_DOWN:
+      frameDuration: 1000
+      action: MOVE_DOWN
+      frames:
+      - *id02
+      rotationPerSecond: 0.0
+    STAND_RIGHT:
+      frameDuration: 1000
+      action: STAND_RIGHT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    STAND_UP:
+      frameDuration: 1000
+      action: STAND_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    STAND_LEFT:
+      frameDuration: 1000
+      action: STAND_LEFT
+      frames:
+      - {x: 1, y: 1}
+      rotationPerSecond: 0.0
+    STAND_DOWN:
+      frameDuration: 1000
+      action: STAND_DOWN
+      frames:
+      - {x: 0, y: 1}
+      rotationPerSecond: 0.0
+    WORK_RIGHT:
+      frameDuration: 1000
+      action: WORK_RIGHT
+      frames:
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
+    WORK_UP:
+      frameDuration: 1000
+      action: WORK_UP
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+    WORK_DOWN:
+      frameDuration: 1000
+      action: WORK_DOWN
+      frames:
+      - {x: 0, y: 1}
+      rotationPerSecond: 0.0
+    WORK_LEFT:
+      frameDuration: 1000
+      action: WORK_LEFT
+      frames:
+      - {x: 1, y: 1}
+      rotationPerSecond: 0.0
+    DEFAULT:
+      frameDuration: 1000
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      rotationPerSecond: 0.0
+equipmentOffsets:
+- &character02
+  id: 0
+  name: character
+  frameOffsets:
+  - {x: 0, y: 0, offsetX: 0, offsetY: 2, back: false}
+  - {x: 1, y: 0, offsetX: 0, offsetY: 3, back: true}
+  - {x: 2, y: 0, offsetX: 1, offsetY: 1, back: false}
+  - {x: 0, y: 1, offsetX: 6, offsetY: 2, back: false}
+  - {x: 1, y: 1, offsetX: 5, offsetY: 1, back: true}
+  - {x: 2, y: 1, offsetX: 6, offsetY: 3, back: true}
+  - {x: 0, y: 2, offsetX: 4, offsetY: 2, back: false}
+  - {x: 1, y: 2, offsetX: 5, offsetY: 2, back: false}
+  - {x: 2, y: 2, offsetX: 3, offsetY: 2, back: false}
+  - {x: 0, y: 3, offsetX: 2, offsetY: 2, back: false}
+  - {x: 1, y: 3, offsetX: 1, offsetY: 2, back: false}
+  - {x: 2, y: 3, offsetX: 3, offsetY: 2, back: false}
+spriteSheets:
+- id: 0
+  name: none
+  width: 8
+  height: 8
+  image: none.png
+  animationTemplate: *single_image
+  equipmentOffset: null
+  heightOffset: 0.0
+  shadow: true
+  shadowResizing: 0
+- &character03
+  id: 1
+  name: character
+  width: 7
+  height: 8
+  image: character.png
+  animationTemplate: *character
+  equipmentOffset: *character02
+  heightOffset: 0.0
+  shadow: true
+  shadowResizing: 0
+- id: 2
+  name: tiles_1
+  width: 8
+  height: 8
+  image: tiles.png
+  animationTemplate: *single_image
+  equipmentOffset: null
+  heightOffset: 0.0
+  shadow: false
+  shadowResizing: 0
+effects: []
+items:
+- !!AccessoryItem
+  id: 0
+  name: speed_accessory
+  maxStackSize: 1
+  frame: {x: 0, y: 0}
+  image: tiles.png
+  statModifiers:
+  - {statType: SPEED, operationType: ADDITIVE, value: 20.0}
+  triggers: []
+  ability: !!ItemAlterationAbility
+    id: 0
+    cooldown: 0
+    alterations: []
+    ammunition: null
+itemCrafts: []
+itemRewards: []
+behaviorSets: []
+abilitySets: []
+creatures: []
+tiles:
+- &grass
+  id: 0
+  name: grass
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 0, y: 0}
+  image: tiles.png
+- &dark_grass
+  id: 1
+  name: dark_grass
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 1, y: 0}
+  image: tiles.png
+- &void
+  id: 2
+  name: void
+  solid: true
+  velocityFactor: 1.0
+  frames:
+  - {x: 2, y: 0}
+  image: tiles.png
+- &sand
+  id: 3
+  name: sand
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 3, y: 0}
+  image: tiles.png
+- &water
+  id: 4
+  name: water
+  solid: false
+  velocityFactor: 0.45
+  frames:
+  - {x: 4, y: 0}
+  - {x: 5, y: 0}
+  - {x: 6, y: 0}
+  - {x: 5, y: 0}
+  image: tiles.png
+- &deep_water
+  id: 5
+  name: deep_water
+  solid: true
+  velocityFactor: 1.0
+  frames:
+  - {x: 4, y: 1}
+  - {x: 5, y: 1}
+  - {x: 6, y: 1}
+  - {x: 5, y: 1}
+  image: tiles.png
+- &rock
+  id: 6
+  name: rock
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 0, y: 1}
+  image: tiles.png
+- &mountain
+  id: 7
+  name: mountain
+  solid: true
+  velocityFactor: 1.0
+  frames:
+  - {x: 1, y: 1}
+  image: tiles.png
+- &highlands_grass
+  id: 8
+  name: highlands_grass
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 0, y: 2}
+  image: tiles.png
+- &highlands_dark_grass
+  id: 9
+  name: highlands_dark_grass
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 1, y: 2}
+  image: tiles.png
+- &highlands_rock
+  id: 10
+  name: highlands_rock
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 2, y: 2}
+  image: tiles.png
+- &highlands_mountain
+  id: 11
+  name: highlands_mountain
+  solid: true
+  velocityFactor: 1.0
+  frames:
+  - {x: 3, y: 2}
+  image: tiles.png
+- &highlands_sand
+  id: 12
+  name: highlands_sand
+  solid: false
+  velocityFactor: 1.1
+  frames:
+  - {x: 4, y: 2}
+  image: tiles.png
+structures: []
+mapProviders:
+- &default !!ProcedurallyGeneratedMapProvider
+  id: 0
+  name: default
+  heightmaps:
+  - &height {id: 0, name: height, numberOfoctaves: 5, persistence: 0.7, scale: 50.0}
+  - &mana {id: 1, name: mana, numberOfoctaves: 3, persistence: 0.5, scale: 200.0}
+  - &holy {id: 2, name: holy, numberOfoctaves: 4, persistence: 0.4, scale: 250.0}
+  defaultTile: *void
+  tileGenerators:
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 1.0
+    - heightmap: *mana
+      min: 0.4
+      max: 1.0
+    - heightmap: *holy
+      min: 0.6
+      max: 1.0
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *highlands_sand
+        next: 0.33
+      - tile: *highlands_grass
+        next: 0.65
+      - tile: *highlands_dark_grass
+        next: 0.75
+      - tile: *highlands_rock
+        next: 0.85
+      - tile: *highlands_mountain
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.0
+      max: 1.0
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *deep_water
+        next: 0.15
+      - tile: *water
+        next: 0.25
+      - tile: *sand
+        next: 0.33
+      - tile: *grass
+        next: 0.65
+      - tile: *dark_grass
+        next: 0.75
+      - tile: *rock
+        next: 0.85
+      - tile: *mountain
+        next: 1.0
+  structureGenerators: []
+ecosystems:
+- &empty
+  id: 0
+  name: empty
+  structureSpawners: []
+  darknessSpawner:
+    creatureChooser:
+      backingArray: []
+    initialSpawn: 0
+    maximumCreatures: 0
+    respawnTime: {min: 60000, max: 60000}
+gameModes:
+- id: 0
+  name: Testing
+  teamNumberInterval: {min: 1, max: 1}
+  teamSizeInterval: {min: 1, max: 1}
+  mapProvider: *default
+  ecosystem: *empty
+  dayCycle: !!EternalDayCycle {}
+  roles: null
+  endGameConditions: []
+  events: []
+  mapLimits: null
+  playerSpawn: !!AutoSquarePlayerSpawn {size: 490, minFreeSpace: 0.4, maxFreeSpace: 1.0}
+  playerDeathItemHandling: DROP
+  playerRespawnType: NONE
+  keepPermanentStats: false
+  playerRespawnDelay: 5000
+  hungerPerMinute: 0.0
+constants:
+  defaultCharacter: *character03
+  outsideTile: *void
+  tileAnimationSpeed: 300
+releaseVersion: ALPHA_13B
