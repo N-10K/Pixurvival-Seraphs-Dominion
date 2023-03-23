@@ -1,7 +1,7 @@
 !!ContentPack
 identifier:
   name: Seraph's Dominion Alpha
-  version: {major: 1, minor: 0}
+  version: {major: 0, minor: 1}
   author: Seraph
 animationTemplates:
 - &single_image
