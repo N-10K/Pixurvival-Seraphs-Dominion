@@ -480,7 +480,7 @@ spriteSheets:
   name: none
   width: 8
   height: 8
-  image: none.png
+  image: images/none.png
   animationTemplate: *single_image
   equipmentOffset: null
   heightOffset: 0.0
@@ -491,7 +491,7 @@ spriteSheets:
   name: character
   width: 7
   height: 8
-  image: character.png
+  image: images/character.png
   animationTemplate: *character
   equipmentOffset: *character02
   heightOffset: 0.0
@@ -501,7 +501,7 @@ spriteSheets:
   name: tiles_1
   width: 8
   height: 8
-  image: tiles.png
+  image: images/tiles.png
   animationTemplate: *single_image
   equipmentOffset: null
   heightOffset: 0.0
@@ -514,7 +514,7 @@ items:
   name: speed_accessory
   maxStackSize: 1
   frame: {x: 0, y: 0}
-  image: tiles.png
+  image: images/tiles.png
   statModifiers:
   - {statType: SPEED, operationType: ADDITIVE, value: 20.0}
   triggers: []
@@ -536,7 +536,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 0, y: 0}
-  image: tiles.png
+  image: images/tiles.png
 - &dark_grass
   id: 1
   name: dark_grass
@@ -544,7 +544,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 1, y: 0}
-  image: tiles.png
+  image: images/tiles.png
 - &void
   id: 2
   name: void
@@ -552,7 +552,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 2, y: 0}
-  image: tiles.png
+  image: images/tiles.png
 - &sand
   id: 3
   name: sand
@@ -560,7 +560,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 3, y: 0}
-  image: tiles.png
+  image: images/tiles.png
 - &water
   id: 4
   name: water
@@ -571,7 +571,7 @@ tiles:
   - {x: 5, y: 0}
   - {x: 6, y: 0}
   - {x: 5, y: 0}
-  image: tiles.png
+  image: images/tiles.png
 - &deep_water
   id: 5
   name: deep_water
@@ -582,7 +582,7 @@ tiles:
   - {x: 5, y: 1}
   - {x: 6, y: 1}
   - {x: 5, y: 1}
-  image: tiles.png
+  image: images/tiles.png
 - &rock
   id: 6
   name: rock
@@ -590,7 +590,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 0, y: 1}
-  image: tiles.png
+  image: images/tiles.png
 - &mountain
   id: 7
   name: mountain
@@ -598,7 +598,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 1, y: 1}
-  image: tiles.png
+  image: images/tiles.png
 - &highlands_grass
   id: 8
   name: highlands_grass
@@ -606,7 +606,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 0, y: 2}
-  image: tiles.png
+  image: images/tiles.png
 - &highlands_dark_grass
   id: 9
   name: highlands_dark_grass
@@ -614,7 +614,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 1, y: 2}
-  image: tiles.png
+  image: images/tiles.png
 - &highlands_rock
   id: 10
   name: highlands_rock
@@ -622,7 +622,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 2, y: 2}
-  image: tiles.png
+  image: images/tiles.png
 - &highlands_mountain
   id: 11
   name: highlands_mountain
@@ -630,7 +630,7 @@ tiles:
   velocityFactor: 1.0
   frames:
   - {x: 3, y: 2}
-  image: tiles.png
+  image: images/tiles.png
 - &highlands_sand
   id: 12
   name: highlands_sand
@@ -638,7 +638,39 @@ tiles:
   velocityFactor: 1.1
   frames:
   - {x: 4, y: 2}
-  image: tiles.png
+  image: images/tiles.png
+- &desert_sand
+  id: 13
+  name: desert_sand
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 2, y: 1}
+  image: images/tiles.png
+- &highlands_desert_sand
+  id: 14
+  name: highlands_desert_sand
+  solid: false
+  velocityFactor: 1.2
+  frames:
+  - {x: 3, y: 1}
+  image: images/tiles.png
+- &swamp_grass
+  id: 15
+  name: swamp_grass
+  solid: false
+  velocityFactor: 1.0
+  frames:
+  - {x: 6, y: 2}
+  image: images/tiles.png
+- &swamp_mud
+  id: 16
+  name: swamp_mud
+  solid: false
+  velocityFactor: 0.5
+  frames:
+  - {x: 5, y: 2}
+  image: images/tiles.png
 structures: []
 mapProviders:
 - &default !!ProcedurallyGeneratedMapProvider
@@ -648,8 +680,96 @@ mapProviders:
   - &height {id: 0, name: height, numberOfoctaves: 5, persistence: 0.7, scale: 50.0}
   - &mana {id: 1, name: mana, numberOfoctaves: 3, persistence: 0.5, scale: 200.0}
   - &holy {id: 2, name: holy, numberOfoctaves: 4, persistence: 0.4, scale: 250.0}
+  - &moisture {id: 3, name: moisture, numberOfoctaves: 3, persistence: 0.64, scale: 200.0}
+  - &river {id: 4, name: river, numberOfoctaves: 1, persistence: 0.9, scale: 250.0}
   defaultTile: *void
   tileGenerators:
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.33
+      max: 0.75
+    - heightmap: *holy
+      min: 0.6
+      max: 1.0
+    - heightmap: *mana
+      min: 0.4
+      max: 1.0
+    - heightmap: *moisture
+      min: 0.0
+      max: 0.3
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *highlands_desert_sand
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.33
+      max: 0.75
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.0
+      max: 0.3
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *desert_sand
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 0.65
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.6
+      max: 1.0
+    - heightmap: *river
+      min: 0.4
+      max: 0.62
+    tileHashmap:
+      heightmap: *river
+      entries:
+      - tile: *swamp_mud
+        next: 0.47
+      - tile: *water
+        next: 0.55
+      - tile: *swamp_mud
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 0.65
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.6
+      max: 1.0
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *water
+        next: 0.25
+      - tile: *swamp_mud
+        next: 0.37
+      - tile: *swamp_grass
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 0.75
+    - heightmap: *river
+      min: 0.47
+      max: 0.55
+    tileHashmap:
+      heightmap: *river
+      entries:
+      - tile: *water
+        next: 1.0
   - heightmapConditions:
     - heightmap: *height
       min: 0.25
@@ -673,10 +793,7 @@ mapProviders:
         next: 0.85
       - tile: *highlands_mountain
         next: 1.0
-  - heightmapConditions:
-    - heightmap: *height
-      min: 0.0
-      max: 1.0
+  - heightmapConditions: []
     tileHashmap:
       heightmap: *height
       entries:
@@ -708,20 +825,20 @@ ecosystems:
     respawnTime: {min: 60000, max: 60000}
 gameModes:
 - id: 0
-  name: Testing
+  name: Survival
   teamNumberInterval: {min: 1, max: 1}
   teamSizeInterval: {min: 1, max: 1}
   mapProvider: *default
   ecosystem: *empty
-  dayCycle: !!EternalDayCycle {}
+  dayCycle: !!DayNightCycle {dayDuration: 600000, nightDuration: 420000}
   roles: null
   endGameConditions: []
   events: []
   mapLimits: null
   playerSpawn: !!AutoSquarePlayerSpawn {size: 490, minFreeSpace: 0.4, maxFreeSpace: 1.0}
   playerDeathItemHandling: DROP
-  playerRespawnType: NONE
-  keepPermanentStats: false
+  playerRespawnType: SPAWN_POSITION
+  keepPermanentStats: true
   playerRespawnDelay: 5000
   hungerPerMinute: 0.0
 constants:

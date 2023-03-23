@@ -38,6 +38,7 @@ children:
       - !!element {type: TILE, id: 5}
       - !!element {type: TILE, id: 6}
       - !!element {type: TILE, id: 7}
+      - !!element {type: TILE, id: 13}
     - !!folder
       name: highlands tiles
       children:
@@ -46,6 +47,12 @@ children:
       - !!element {type: TILE, id: 10}
       - !!element {type: TILE, id: 11}
       - !!element {type: TILE, id: 12}
+      - !!element {type: TILE, id: 14}
+    - !!folder
+      name: swamp tiles
+      children:
+      - !!element {type: TILE, id: 15}
+      - !!element {type: TILE, id: 16}
 - !!folder
   name: Gamemodes
   children:
@@ -57,11 +64,11 @@ children:
     children: []
   - !!folder
     name: Survival
-    children: []
-  - !!folder
-    name: Testing
     children:
     - !!element {type: GAME_MODE, id: 0}
+  - !!folder
+    name: Testing
+    children: []
 - !!folder
   name: Creatures
   children:
