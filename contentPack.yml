@@ -681,9 +681,70 @@ mapProviders:
   - &mana {id: 1, name: mana, numberOfoctaves: 3, persistence: 0.5, scale: 200.0}
   - &holy {id: 2, name: holy, numberOfoctaves: 4, persistence: 0.4, scale: 250.0}
   - &moisture {id: 3, name: moisture, numberOfoctaves: 3, persistence: 0.64, scale: 200.0}
-  - &river {id: 4, name: river, numberOfoctaves: 1, persistence: 0.9, scale: 250.0}
+  - {id: 4, name: river, numberOfoctaves: 1, persistence: 0.9, scale: 250.0}
   defaultTile: *void
   tileGenerators:
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 0.33
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.6
+      max: 1.0
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *swamp_mud
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.62
+      max: 0.65
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.6
+      max: 1.0
+    tileHashmap:
+      heightmap: *height
+      entries:
+      - tile: *swamp_mud
+        next: 1.0
+  - heightmapConditions:
+    - heightmap: *height
+      min: 0.25
+      max: 0.65
+    - heightmap: *holy
+      min: 0.0
+      max: 0.6
+    - heightmap: *moisture
+      min: 0.6
+      max: 1.0
+    tileHashmap:
+      heightmap: *moisture
+      entries:
+      - tile: *swamp_mud
+        next: 0.63
+      - tile: *water
+        next: 0.65
+      - tile: *swamp_mud
+        next: 0.68
+      - tile: *swamp_grass
+        next: 0.77
+      - tile: *swamp_mud
+        next: 0.83
+      - tile: *water
+        next: 0.86
+      - tile: *swamp_mud
+        next: 0.89
+      - tile: *swamp_grass
+        next: 0.94
+      - tile: *swamp_mud
+        next: 1.0
   - heightmapConditions:
     - heightmap: *height
       min: 0.33
@@ -716,59 +777,6 @@ mapProviders:
       heightmap: *height
       entries:
       - tile: *desert_sand
-        next: 1.0
-  - heightmapConditions:
-    - heightmap: *height
-      min: 0.25
-      max: 0.65
-    - heightmap: *holy
-      min: 0.0
-      max: 0.6
-    - heightmap: *moisture
-      min: 0.6
-      max: 1.0
-    - heightmap: *river
-      min: 0.4
-      max: 0.62
-    tileHashmap:
-      heightmap: *river
-      entries:
-      - tile: *swamp_mud
-        next: 0.47
-      - tile: *water
-        next: 0.55
-      - tile: *swamp_mud
-        next: 1.0
-  - heightmapConditions:
-    - heightmap: *height
-      min: 0.25
-      max: 0.65
-    - heightmap: *holy
-      min: 0.0
-      max: 0.6
-    - heightmap: *moisture
-      min: 0.6
-      max: 1.0
-    tileHashmap:
-      heightmap: *height
-      entries:
-      - tile: *water
-        next: 0.25
-      - tile: *swamp_mud
-        next: 0.37
-      - tile: *swamp_grass
-        next: 1.0
-  - heightmapConditions:
-    - heightmap: *height
-      min: 0.25
-      max: 0.75
-    - heightmap: *river
-      min: 0.47
-      max: 0.55
-    tileHashmap:
-      heightmap: *river
-      entries:
-      - tile: *water
         next: 1.0
   - heightmapConditions:
     - heightmap: *height
