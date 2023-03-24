@@ -190,7 +190,8 @@ animationTemplates:
       frames:
       - {x: 0, y: 0}
       rotationPerSecond: 0.0
-- id: 2
+- &harvest
+  id: 2
   name: harvest
   animations:
     DEFAULT:
@@ -203,7 +204,7 @@ animationTemplates:
       frameDuration: 1000
       action: HARVESTED
       frames:
-      - {x: 0, y: 1}
+      - {x: 1, y: 0}
       rotationPerSecond: 0.0
 - id: 3
   name: bidirectional_single_image
@@ -507,6 +508,17 @@ spriteSheets:
   heightOffset: 0.0
   shadow: false
   shadowResizing: 0
+- &Tree1
+  id: 3
+  name: Tree1
+  width: 15
+  height: 22
+  image: images/tree1.png
+  animationTemplate: *harvest
+  equipmentOffset: null
+  heightOffset: 0.0
+  shadow: true
+  shadowResizing: 0
 effects: []
 items:
 - !!AccessoryItem
@@ -524,7 +536,11 @@ items:
     alterations: []
     ammunition: null
 itemCrafts: []
-itemRewards: []
+itemRewards:
+- &Tree102
+  id: 0
+  name: Tree1
+  entries: []
 behaviorSets: []
 abilitySets: []
 creatures: []
@@ -671,7 +687,38 @@ tiles:
   frames:
   - {x: 5, y: 2}
   image: images/tiles.png
-structures: []
+structures:
+- &Tree103 !!HarvestableStructure
+  id: 0
+  name: Tree1
+  solid: true
+  spriteSheet: *Tree1
+  randomHorizontalFlip: true
+  avoidStuck: false
+  autoDestroy: false
+  dimensions: {width: 1, height: 1}
+  duration: 0
+  bannedTiles:
+  - *water
+  - *deep_water
+  - *sand
+  - *rock
+  - *deep_water
+  - *desert_sand
+  - *highlands_sand
+  - *highlands_desert_sand
+  - *highlands_grass
+  - *highlands_dark_grass
+  - *highlands_rock
+  - *highlands_mountain
+  - *swamp_mud
+  - *swamp_grass
+  lightEmissionRadius: 0.0
+  deconstructionDuration: 0
+  maxHealth: 0.0
+  harvestingTime: 0
+  itemReward: *Tree102
+  regrowthTime: {min: 0, max: 0}
 mapProviders:
 - &default !!ProcedurallyGeneratedMapProvider
   id: 0
@@ -819,7 +866,16 @@ mapProviders:
         next: 0.85
       - tile: *mountain
         next: 1.0
-  structureGenerators: []
+  structureGenerators:
+  - structureProducer:
+      backingArray:
+      - probability: 1.0
+        element: *Tree103
+    heightmapConditions:
+    - heightmap: *height
+      min: 0.33
+      max: 0.75
+    density: 0.006
 ecosystems:
 - &empty
   id: 0

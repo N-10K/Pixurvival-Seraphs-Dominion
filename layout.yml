@@ -20,7 +20,8 @@ children:
     children:
     - !!folder
       name: Natural
-      children: []
+      children:
+      - !!element {type: STRUCTURE, id: 0}
     - !!folder
       name: Player
       children: []
@@ -182,7 +183,18 @@ children:
       children: []
     - !!folder
       name: Structures
-      children: []
+      children:
+      - !!folder
+        name: Natural
+        children:
+        - !!element {type: SPRITE_SHEET, id: 3}
     - !!folder
       name: Effects
       children: []
+- !!folder
+  name: Item Rewards
+  children:
+  - !!folder
+    name: Structures
+    children:
+    - !!element {type: ITEM_REWARD, id: 0}
