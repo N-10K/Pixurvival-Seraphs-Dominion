@@ -459,6 +459,17 @@ animationTemplates:
       frames:
       - {x: 0, y: 0}
       rotationPerSecond: 0.0
+- &sword_slash
+  id: 7
+  name: sword_slash
+  animations:
+    DEFAULT:
+      frameDuration: 100
+      action: DEFAULT
+      frames:
+      - {x: 0, y: 0}
+      - {x: 1, y: 0}
+      rotationPerSecond: 0.0
 equipmentOffsets:
 - &character02
   id: 0
@@ -540,7 +551,37 @@ spriteSheets:
   heightOffset: 0.0
   shadow: true
   shadowResizing: 0
-effects: []
+- &basic_sword_slash
+  id: 6
+  name: basic_sword_slash
+  width: 8
+  height: 12
+  image: images/basic_sword_slash.png
+  animationTemplate: *sword_slash
+  equipmentOffset: null
+  heightOffset: 0.0
+  shadow: false
+  shadowResizing: 0
+effects:
+- &test_slash
+  id: 0
+  name: test_slash
+  spriteSheet: *basic_sword_slash
+  orientation: MOVING_ANGLE
+  drawDepth: NORMAL
+  solid: false
+  duration: 200
+  entityCollisionRadius: 0.0
+  mapCollisionRadius: 0.0
+  movement: !!LinearEffectMovement {initialDistance: 1.0, speed: 0.0, relative: false, destroyAtTargetPosition: false}
+  targets: []
+  repeatFollowingElements:
+    id: 0
+    base: 0.0
+    statMultipliers: []
+    randomValue: 0.0
+  delayedFollowingElements: []
+  deathAlterations: []
 items:
 - !!AccessoryItem
   id: 0
@@ -562,6 +603,38 @@ items:
   maxStackSize: 30
   frame: {x: 0, y: 0}
   image: images/items.png
+- !!WeaponItem
+  id: 2
+  name: test_weapon
+  maxStackSize: 1
+  frame: {x: 0, y: 0}
+  image: images/items.png
+  statModifiers: []
+  triggers: []
+  spriteSheet: *character03
+  baseAbility: !!ItemAlterationAbility
+    id: 0
+    cooldown: 600
+    alterations:
+    - !!StunAlteration {targetType: TARGET, duration: 200}
+    - !!StatAlteration
+      targetType: TARGET
+      duration: 300
+      stackPolicy: REPLACE
+      statModifier: {statType: ARMOR, operationType: ADDITIVE, value: 0.2}
+    - !!FollowingElementAlteration
+      targetType: TARGET
+      followingElement: !!FollowingEffect
+        offsetAngleEffect:
+          offsetAngle: 0.0
+          randomAngle: 0.0
+          effect: *test_slash
+    ammunition: null
+  specialAbility: !!ItemAlterationAbility
+    id: 0
+    cooldown: 0
+    alterations: []
+    ammunition: null
 itemCrafts: []
 itemRewards:
 - &tree_102

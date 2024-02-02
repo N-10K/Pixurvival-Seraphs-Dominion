@@ -94,7 +94,8 @@ children:
   children:
   - !!folder
     name: Weapons
-    children: []
+    children:
+    - !!element {type: ITEM, id: 2}
   - !!folder
     name: Accessories
     children: []
@@ -125,8 +126,12 @@ children:
     name: Creatures
     children: []
   - !!folder
-    name: Items
-    children: []
+    name: Player
+    children:
+    - !!folder
+      name: Weapons
+      children:
+      - !!element {type: EFFECT, id: 0}
 - !!folder
   name: Sprites
   children:
@@ -147,7 +152,8 @@ children:
       - !!element {type: EQUIPMENT_OFFSET, id: 0}
     - !!folder
       name: Equipment
-      children: []
+      children:
+      - !!element {type: ANIMATION_TEMPLATE, id: 7}
     - !!folder
       name: Creatures
       children: []
@@ -194,7 +200,11 @@ children:
         - !!element {type: SPRITE_SHEET, id: 4}
     - !!folder
       name: Effects
-      children: []
+      children:
+      - !!folder
+        name: player
+        children:
+        - !!element {type: SPRITE_SHEET, id: 6}
 - !!folder
   name: Item Rewards
   children:
