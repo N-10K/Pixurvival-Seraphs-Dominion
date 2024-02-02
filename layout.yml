@@ -22,6 +22,7 @@ children:
       name: Natural
       children:
       - !!element {type: STRUCTURE, id: 0}
+      - !!element {type: STRUCTURE, id: 1}
     - !!folder
       name: Player
       children: []
@@ -188,6 +189,7 @@ children:
         name: Natural
         children:
         - !!element {type: SPRITE_SHEET, id: 3}
+        - !!element {type: SPRITE_SHEET, id: 4}
     - !!folder
       name: Effects
       children: []
