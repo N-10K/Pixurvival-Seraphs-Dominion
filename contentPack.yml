@@ -508,9 +508,9 @@ spriteSheets:
   heightOffset: 0.0
   shadow: false
   shadowResizing: 0
-- &Tree1
+- &tree_1
   id: 3
-  name: Tree1
+  name: tree_1
   width: 15
   height: 22
   image: images/tree1.png
@@ -526,6 +526,16 @@ spriteSheets:
   height: 22
   image: images/swamp_tree.png
   animationTemplate: *harvest
+  equipmentOffset: null
+  heightOffset: 0.0
+  shadow: true
+  shadowResizing: 0
+- id: 5
+  name: items
+  width: 8
+  height: 8
+  image: images/items.png
+  animationTemplate: *single_image
   equipmentOffset: null
   heightOffset: 0.0
   shadow: true
@@ -546,12 +556,22 @@ items:
     cooldown: 0
     alterations: []
     ammunition: null
+- &log !!ResourceItem
+  id: 1
+  name: log
+  maxStackSize: 30
+  frame: {x: 0, y: 0}
+  image: images/items.png
 itemCrafts: []
 itemRewards:
-- &Tree102
+- &tree_102
   id: 0
-  name: Tree1
-  entries: []
+  name: tree_1
+  entries:
+  - itemStack: !!ItemStack
+      item: *log
+      quantity: 1
+    probability: 1.0
 behaviorSets: []
 abilitySets: []
 creatures: []
@@ -699,11 +719,11 @@ tiles:
   - {x: 5, y: 2}
   image: images/tiles.png
 structures:
-- &Tree103 !!HarvestableStructure
+- &tree_103 !!HarvestableStructure
   id: 0
-  name: Tree1
+  name: tree_1
   solid: true
-  spriteSheet: *Tree1
+  spriteSheet: *tree_1
   randomHorizontalFlip: true
   avoidStuck: false
   autoDestroy: false
@@ -728,7 +748,7 @@ structures:
   deconstructionDuration: 0
   maxHealth: 0.0
   harvestingTime: 0
-  itemReward: *Tree102
+  itemReward: *tree_102
   regrowthTime: {min: 0, max: 0}
 - &swamp_tree02 !!HarvestableStructure
   id: 1
@@ -759,7 +779,7 @@ structures:
   deconstructionDuration: 0
   maxHealth: 0.0
   harvestingTime: 0
-  itemReward: *Tree102
+  itemReward: *tree_102
   regrowthTime: {min: 0, max: 0}
 mapProviders:
 - &default !!ProcedurallyGeneratedMapProvider
@@ -921,7 +941,7 @@ mapProviders:
   - structureProducer:
       backingArray:
       - probability: 1.0
-        element: *Tree103
+        element: *tree_103
     heightmapConditions:
     - heightmap: *height
       min: 0.33

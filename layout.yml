@@ -103,7 +103,8 @@ children:
     children: []
   - !!folder
     name: Resources
-    children: []
+    children:
+    - !!element {type: ITEM, id: 1}
   - !!folder
     name: Structures
     children: []
@@ -178,7 +179,8 @@ children:
       - !!element {type: SPRITE_SHEET, id: 2}
     - !!folder
       name: Items
-      children: []
+      children:
+      - !!element {type: SPRITE_SHEET, id: 5}
     - !!folder
       name: Creatures
       children: []
