@@ -1,7 +1,7 @@
 !!com.pixurvival.core.contentPack.summary.ContentPackSummary
 identifier:
   name: Seraph's Dominion Alpha
-  version: {major: 0, minor: 1}
+  version: {major: 0, minor: 2}
   author: Seraph
 gameModeSummaries:
 - nameTranslations: {en-US: Survival}
